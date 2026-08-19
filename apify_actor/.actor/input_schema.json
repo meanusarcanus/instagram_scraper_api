@@ -1,0 +1,36 @@
+{
+  "title": "Instagram Scraper Pro Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "target_username": {
+      "title": "Instagram Username",
+      "type": "string",
+      "description": "Instagram profile handle (e.g. nike, cristiano).",
+      "editor": "textfield",
+      "prefill": "nike"
+    },
+    "target_url": {
+      "title": "Post or Reel URL",
+      "type": "string",
+      "description": "Specific Instagram post or reel URL.",
+      "editor": "textfield",
+      "prefill": "https://www.instagram.com/p/C98x01A/"
+    },
+    "hashtag": {
+      "title": "Hashtag Search Query",
+      "type": "string",
+      "description": "Hashtag keyword (e.g. fitness, tech).",
+      "editor": "textfield",
+      "prefill": "fitness"
+    },
+    "max_items": {
+      "title": "Max Items to Extract",
+      "type": "integer",
+      "description": "Maximum number of Instagram items to scrape.",
+      "editor": "number",
+      "default": 20,
+      "prefill": 20
+    }
+  }
+}

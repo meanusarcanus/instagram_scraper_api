@@ -1,0 +1,12 @@
+{
+  "actorSpecification": 1,
+  "name": "instagram-scraper-ai",
+  "title": "Instagram Scraper & Profile Intelligence Pro",
+  "description": "Extract Instagram posts, reels, profiles, hashtags, and comments without login. Enriched with AI engagement insights & follower growth analytics. Just $1.49/1k results—45% cheaper!",
+  "version": "1.0.0",
+  "meta": {
+    "category": "SOCIAL_MEDIA"
+  },
+  "dockerfile": "./Dockerfile",
+  "output": "./output_schema.json"
+}

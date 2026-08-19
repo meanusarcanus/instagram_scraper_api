@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+instagram_scraper/__init__.py
+instagram_scraper/client.py
+instagram_scraper_api.egg-info/PKG-INFO
+instagram_scraper_api.egg-info/SOURCES.txt
+instagram_scraper_api.egg-info/dependency_links.txt
+instagram_scraper_api.egg-info/requires.txt
+instagram_scraper_api.egg-info/top_level.txt

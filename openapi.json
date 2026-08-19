@@ -1,0 +1,258 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Instagram Scraper & Profile Intelligence Pro",
+    "description": "High-performance API engine to scrape Instagram posts, reels, profiles, mentions, and hashtags without login with AI engagement analysis.",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Read Root",
+        "operationId": "read_root__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/scrape-instagram": {
+      "post": {
+        "summary": "Scrape Instagram",
+        "operationId": "scrape_instagram_scrape_instagram_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InstagramScrapeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InstagramScrapeResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "InstagramItem": {
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "title": "Item Id"
+          },
+          "url": {
+            "type": "string",
+            "title": "Url"
+          },
+          "type": {
+            "type": "string",
+            "title": "Type"
+          },
+          "caption": {
+            "type": "string",
+            "title": "Caption"
+          },
+          "likes_count": {
+            "type": "integer",
+            "title": "Likes Count"
+          },
+          "comments_count": {
+            "type": "integer",
+            "title": "Comments Count"
+          },
+          "owner_username": {
+            "type": "string",
+            "title": "Owner Username"
+          },
+          "owner_full_name": {
+            "type": "string",
+            "title": "Owner Full Name"
+          },
+          "followers_count": {
+            "type": "integer",
+            "title": "Followers Count"
+          },
+          "display_url": {
+            "type": "string",
+            "title": "Display Url"
+          },
+          "hashtags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Hashtags"
+          },
+          "timestamp": {
+            "type": "string",
+            "title": "Timestamp"
+          },
+          "ai_engagement_analysis": {
+            "type": "string",
+            "title": "Ai Engagement Analysis"
+          }
+        },
+        "type": "object",
+        "required": [
+          "item_id",
+          "url",
+          "type",
+          "caption",
+          "likes_count",
+          "comments_count",
+          "owner_username",
+          "owner_full_name",
+          "followers_count",
+          "display_url",
+          "hashtags",
+          "timestamp",
+          "ai_engagement_analysis"
+        ],
+        "title": "InstagramItem"
+      },
+      "InstagramScrapeRequest": {
+        "properties": {
+          "target_username": {
+            "type": "string",
+            "title": "Target Username",
+            "description": "Instagram username (e.g. nike, cristiano)",
+            "example": "nike"
+          },
+          "target_url": {
+            "type": "string",
+            "title": "Target Url",
+            "description": "Instagram post or reel URL",
+            "example": "https://www.instagram.com/p/C-sample/"
+          },
+          "hashtag": {
+            "type": "string",
+            "title": "Hashtag",
+            "description": "Hashtag search query (e.g. fitness, tech)",
+            "example": "fitness"
+          },
+          "max_items": {
+            "type": "integer",
+            "maximum": 100.0,
+            "minimum": 1.0,
+            "title": "Max Items",
+            "description": "Maximum number of Instagram items to return",
+            "default": 10
+          }
+        },
+        "type": "object",
+        "title": "InstagramScrapeRequest"
+      },
+      "InstagramScrapeResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "query_type": {
+            "type": "string",
+            "title": "Query Type"
+          },
+          "target_query": {
+            "type": "string",
+            "title": "Target Query"
+          },
+          "total_scraped": {
+            "type": "integer",
+            "title": "Total Scraped"
+          },
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/InstagramItem"
+            },
+            "type": "array",
+            "title": "Results"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "query_type",
+          "target_query",
+          "total_scraped",
+          "results"
+        ],
+        "title": "InstagramScrapeResponse"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}
