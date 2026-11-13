@@ -8,7 +8,7 @@ Complete, standalone documentation kit for publishing **Instagram Scraper & Prof
 
 - **API Name**: `Instagram Scraper & Profile Intelligence Pro`
 - **Category**: `Social` / `Data` / `Analytics`
-- **Base URL**: `https://microsaas-agent-api.vercel.app`
+- **Base URL**: `https://microsaas-agent-api.onrender.com`
 - **Endpoint**: `POST /scrape-instagram`
 
 ---

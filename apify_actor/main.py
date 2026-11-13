@@ -17,7 +17,7 @@ async def main():
 
         Actor.log.info(f"Scraping Instagram data for user='{target_username}' url='{target_url}' tag='{hashtag}' (limit: {max_items})")
 
-        api_url = "https://microsaas-agent-api.vercel.app/scrape-instagram"
+        api_url = "https://microsaas-agent-api.onrender.com/scrape-instagram"
         payload = {
             "target_username": target_username,
             "target_url": target_url,

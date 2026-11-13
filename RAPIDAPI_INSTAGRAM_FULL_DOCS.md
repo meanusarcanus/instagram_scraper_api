@@ -8,7 +8,7 @@ Complete, standalone documentation kit for publishing **Instagram Scraper & Prof
 
 - **API Name**: `Instagram Scraper & Profile Intelligence Pro`
 - **Category**: `Social` / `Data` / `Analytics`
-- **Base URL**: `https://microsaas-agent-api.vercel.app`
+- **Base URL**: `https://microsaas-agent-api.onrender.com`
 - **Endpoint**: `POST /scrape-instagram`
 
 ---
@@ -114,7 +114,7 @@ Extract Instagram media posts, reels, user profile metrics, follower counts, has
 
 ### cURL:
 ```bash
-curl -X POST "https://microsaas-agent-api.vercel.app/scrape-instagram" \
+curl -X POST "https://microsaas-agent-api.onrender.com/scrape-instagram" \
   -H "Content-Type: application/json" \
   -H "X-RapidAPI-Key: YOUR_RAPIDAPI_KEY" \
   -d '{
@@ -140,7 +140,7 @@ for item in res["results"]:
 
 ### JavaScript / Node.js (fetch):
 ```javascript
-const response = await fetch("https://microsaas-agent-api.vercel.app/scrape-instagram", {
+const response = await fetch("https://microsaas-agent-api.onrender.com/scrape-instagram", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
